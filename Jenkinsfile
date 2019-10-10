@@ -30,7 +30,7 @@ volumes: [
 			container('maven'){
 				dir ("./${app1_name}") {
 					//sh ("mvn dependency::tree")
-					sh ("mvn test -Dspring.profiles.active=dev")
+					sh ("mvn -X test -Dspring.profiles.active=dev")
 				}
 			}
 		}
