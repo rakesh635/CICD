@@ -1,7 +1,7 @@
 properties([pipelineTriggers([githubPush()])])
 podTemplate(label: 'mypod1', containers: [
     containerTemplate(name: 'git', image: 'alpine/git', ttyEnabled: true, command: 'cat'),
-    containerTemplate(name: 'maven', image: 'maven:3.6.2-jdk-11', command: 'cat', ttyEnabled: true),
+    containerTemplate(name: 'maven', image: 'maven:3.6.2-jdk-12', command: 'cat', ttyEnabled: true),
     containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
     containerTemplate(name: 'kubectl', image: 'roffe/kubectl:v1.13.2', command: '', ttyEnabled: true),
     containerTemplate(name: 'tomcat8', image: 'tomcat:8.0', command: '', ttyEnabled: true)
