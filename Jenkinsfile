@@ -26,14 +26,14 @@ volumes: [
 			checkout scm
 		
 		}
-		/*stage('Test with Maven/H2') {
+		stage('Test with Maven/H2') {
 			container('maven'){
 				dir ("./${app1_name}") {
 					//sh ("mvn dependency::tree")
 					sh ("mvn -X test -Dspring.profiles.active=dev")
 				}
 			}
-		}*/
+		}
 		stage('Test with Maven/PSQL') {
 			container('kubectl'){
 				withKubeConfig([credentialsId: 'GKEcluster',
